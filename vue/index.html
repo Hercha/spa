@@ -15,7 +15,16 @@
 </head>
 <body>
 
-    <div id="app" v-cloak>{{ message }}</div>
+    <div id="app" v-cloak>
+        <h1>{{ message }}</h1>
+        <form @submit.prevent="updateMessage()">
+            <input type="text" v-model="form.new_message">
+            <button type="submit">Submit</button>
+        </form>
+        <div>
+            <a :href="google" target="_blank">Google</a>
+        </div>
+    </div>
     
 <script src="https://unpkg.com/vue"></script>
 <script src="app.js"></script>
